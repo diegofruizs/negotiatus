@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Negotiatus</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,24 @@
   </head>
 
   <body>
+<nav class="menu" tabindex="0">
+	<div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+		<img src="https://yt3.ggpht.com/-dXbXqdhSJZ8/AAAAAAAAAAI/AAAAAAAAAAA/mo57E5pG3TQ/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" />
+    <h2>Diego F. Ruiz S.</h2>
+  </header>
+	<ul>
+    <li tabindex="0" class="icon-dashboard"><span><%= link_to "Dashboard", root_path%></span></li>
+    <li tabindex="0" class="icon-orders"><span>Orders</span></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="helper">
     <%= yield %>
+  </div>
+</main>
+
+    
   </body>
 </html>
