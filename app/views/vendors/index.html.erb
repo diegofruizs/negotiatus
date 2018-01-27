@@ -1,0 +1,36 @@
+<h1>Vendors list</h1>
+<div>
+	
+<button class="add-button">
+<%= link_to("Add vendor",{action:"new"}) %>
+</button>
+</div>
+<br>
+
+<div>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @vendors.each do |vendor|  %>
+			<tr>
+				<td><%= link_to vendor.name, vendor%></td>
+				<td><%=vendor.address%></td>
+				<td>
+					<button class="danger-button">
+					<%= link_to "Delete", vendor,method: :delete %>
+					</button>
+						
+					</td>
+
+			</tr>
+		<%end%>
+		</tbody>
+	</table>
+</div>
+	

@@ -1,10 +1,19 @@
 body{
-	background:#24BFA3;
+	background:#F3F3F5;
 	margin:0;
 	font-family:"Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
-	color:#fff;
+	color:black;
 	padding-left:240px;
 }
+
+
+table {
+	
+	text-align:center;
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+	}
 
 a,a :visited{
 	color: inherit !important;
@@ -16,7 +25,7 @@ main{
 	height:100vh;
 	
 	.helper{
-		color:#ffea92;
+		color:black;
 		position:absolute;
 		padding:1.2em 2em;
 		text-align:center;
@@ -28,7 +37,7 @@ main{
 }
 
 .menu{
-	background:#010D26;
+	background:#5BBBF0;
 	height:100vh;
 	width:240px;
 	position:fixed;
@@ -77,9 +86,12 @@ main{
 			&.icon-orders{
 				background-image:url(https://cdn3.iconfinder.com/data/icons/delivery-and-logistics/24/iconfinder-65-512.png);
 			}
+			&.icon-vendors{
+				background-image: url(https://cdn1.iconfinder.com/data/icons/line-design-business-set-4/21/people-vendors-256.png);
+			}
 			
 			&:hover{
-				background-color:#3DD9AD;
+				background-color:#6BE8F4;
 			}
 			
 			&:focus{

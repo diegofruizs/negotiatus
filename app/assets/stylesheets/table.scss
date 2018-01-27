@@ -1,0 +1,45 @@
+
+table {
+	
+    font-size:0.95em;
+	text-align:center;
+	overflow: hidden;
+	font-family:"Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+	color:black;
+	
+	}
+
+th,
+td {
+	padding: 5px;
+	color: black;
+}
+
+thead {
+	th {
+		background-color: #5BBBF0;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: #6BE8F4;
+		}
+	}
+	td {
+     	position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: #6BE8F4;
+				z-index: -1;
+			}
+		}
+	}
+}

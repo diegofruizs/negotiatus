@@ -1,0 +1,32 @@
+<h1>Detail Vendor</h1>
+<%= link_to("<<back Vendors",{action:"index"}) %>
+<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+	
+			<tr>
+			<td>
+				<%= @vendor.name %>
+			</td>
+			<td>
+				<%= @vendor.address %>
+			</td>
+			<td>
+				<button class="edit-button">
+					
+				<%= link_to "Edit", edit_vendor_path(@vendor)%>			
+				</button>
+			</td>	
+			</tr>
+	
+			
+		</tbody>
+	</table>
+
+
