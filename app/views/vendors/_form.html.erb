@@ -11,13 +11,12 @@
 <div>
 	<%= f.text_field :address, placeholder: "Address"%>
 </div>
-	<%= f.submit "Save"%>
-<button>
+	<%= f.submit "Save" , class:"add-button"%>
+<button class="add-button">
 	<%= link_to("Cancel",{action:"index"}) %>
 </button> 
 	
 </div>
-
 
 <%end%>
 </div>

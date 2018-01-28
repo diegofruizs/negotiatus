@@ -1,0 +1,27 @@
+<nav class="menu" tabindex="0">
+	<div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+		
+    <% if user_signed_in?%>
+    <img src="https://yt3.ggpht.com/-dXbXqdhSJZ8/AAAAAAAAAAI/AAAAAAAAAAA/mo57E5pG3TQ/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" />
+    <h2>Diego F. Ruiz S.</h2>
+    <%=current_user.email%>
+      <button class="danger-button">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      </button>
+    
+    <% else%>
+      <button class="add-button">
+        <%= link_to "Sign In", new_user_session_path%>
+      </button>
+      <button class="edit-button">
+        <%= link_to "Sign Up", new_user_registration_path%>
+      </button>
+    <%end%>
+  </header>
+	<ul>
+    <li tabindex="0" class="icon-dashboard"><span><%= link_to "Dashboard", root_path%></span></li>
+    <li tabindex="0" class="icon-orders"><span><%= link_to "Orders", orders_path%></span></li>
+    <li tabindex="0" class="icon-vendors"><span><%= link_to "Vendors", vendors_path%></span></li>
+  </ul>
+</nav>

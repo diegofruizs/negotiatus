@@ -22,6 +22,7 @@
 .form-style-6 input[type="search"],
 .form-style-6 input[type="time"],
 .form-style-6 input[type="url"],
+.form-style-6 input[type="password"],
 .form-style-6 textarea,
 .form-style-6 select 
 {
@@ -49,6 +50,7 @@
 .form-style-6 input[type="search"]:focus,
 .form-style-6 input[type="time"]:focus,
 .form-style-6 input[type="url"]:focus,
+.form-style-6 input[type="password"]:focus,
 .form-style-6 textarea:focus,
 .form-style-6 select:focus
 {
@@ -57,7 +59,6 @@
     border: 1px solid #43D1AF;
 }
 
-.form-style-6 input[type="submit"],
 .form-style-6 input[type="button"],
 .form-style-6 button{
     box-sizing: border-box;
@@ -73,45 +74,51 @@
     color: #fff;
 }
 .danger-button{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    padding: 3%;
-    background: red;
-    border-bottom: 2px solid red;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;    
-    color: #fff;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: red;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
 
 .add-button{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    padding: 3%;
-    background: #6BE8F4;
-    border-bottom: 2px solid #6BE8F4;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;    
-    color: black;
+    
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #6BE8F4;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
 
 .edit-button{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    padding: 3%;
-    background: #FFF491;
-    border-bottom: 2px solid #FFF491;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;    
-    color: black;
+ 
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: yellow;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;   
+    
 }
 
 .form-style-6 input[type="submit"]:hover,
