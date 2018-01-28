@@ -1,5 +1,13 @@
   <% if user_signed_in?%> 
   <h1>Welcome to tracking dashboard web app</h1>
+  <fieldset>
+  	<span>Not-delivered orders</span>
+  	<%= render 'orders/no_orders_delivered'%>
+  </fieldset>
+  <fieldset>
+  	<span>Arriving late</span>
+  	<%= render 'orders/packages_late'%>
+  </fieldset>
   <%else%>
 <div class="login-page">
 <h1>Welcome to tracking dashboard web app</h1>

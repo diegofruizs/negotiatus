@@ -1,7 +1,7 @@
 <h1><%= name%></h1>
 <%= form_for(@vendor) do |f| %>
 <% @vendor.errors.full_messages.each do |message| %>
-<div>* <%= message%></div>
+<div> <%= message%></div>
 <%end %>
 <div class="form-style-6">
 

@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  tracking_number: 1
+  order_number: 1
+  address: MyString
+  vendor: one
 
 two:
-  name: MyString
+  tracking_number: 1
+  order_number: 1
+  address: MyString
+  vendor: two

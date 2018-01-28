@@ -1,0 +1,33 @@
+<h1>Detail Order</h1>
+<%= link_to("<<back Orders",{action:"index"}) %>
+<table>
+		<thead>
+			<tr>
+				<th>Tracking number</th>
+				<th>Order number</th>
+				<th>Address</th>
+				<th>Vendor</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+				<%= @order.tracking_number %>
+			</td>
+			<td>
+				<%= @order.order_number %>
+			</td>
+			<td>
+				<%= @order.address %>
+			</td>
+			<td>
+				<%= @order.vendor.name %>
+			</td>
+			
+			</tr>
+	
+			
+		</tbody>
+	</table>
+
+

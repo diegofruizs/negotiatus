@@ -1,2 +1,32 @@
-<h1>Orders</h1>
-<p>Comming soon</p>
+<h1>Orders list</h1>
+<div>
+	
+<button class="add-button">
+<%= link_to("Add order",{action:"new"}) %>
+</button>
+</div>
+<br>
+
+<div>
+	<table>
+		<thead>
+			<tr>
+				<th>Tracking number</th>
+				<th>Order number</th>
+				<th>Address</th>
+				<th>Vendor</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+		<% @orders.each do |order|  %>
+			<tr>
+				<td><%= order.tracking_number%></td>
+				<td><%= order.order_number%></td>
+				<td><%= order.address%></td>
+				<td><%= order.vendor.name%></td>
+			</tr>
+		<%end%>
+		</tbody>
+	</table>
+</div>

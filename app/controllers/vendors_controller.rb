@@ -23,7 +23,7 @@ class VendorsController < ApplicationController
 	# POST /vendors
 	def create
 		#@vendor = Vendor.new(name: params[:vendor][:name],address: params[:vendor][:address])
-		@vendor = Vendor.new(vendor_params)
+		@vendor = current_user.vendors.new(vendor_params)
 		
 		if @vendor.save
 			redirect_to @vendor
