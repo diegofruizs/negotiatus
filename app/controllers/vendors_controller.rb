@@ -1,5 +1,8 @@
 class VendorsController < ApplicationController
 	
+	before_action :authenticate_user!
+
+
 	#GET /vendors
 	def index
 		@vendors = Vendor.all

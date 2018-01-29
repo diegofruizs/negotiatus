@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180128185757) do
+ActiveRecord::Schema.define(version: 20180129060125) do
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "tracking_number"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20180128185757) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "vendor_id"
+    t.integer  "time_min"
+    t.string   "message"
     t.index ["vendor_id"], name: "index_orders_on_vendor_id", using: :btree
   end
 
