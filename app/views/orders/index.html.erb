@@ -36,10 +36,13 @@
 				<% if order.message.eql? 'Very Late' %>
 				<td class="danger"><%= order.message%></td>
 				<%end%>
-				
+				<% if order.message.eql? 'Processing' %>
+				<td ><%= order.message%></td>
+				<%end%>
 				<td><%= order.vendor.name%></td>
 			</tr>
 		<%end%>
 		</tbody>
 	</table>
 </div>
+<%= will_paginate @orders%>

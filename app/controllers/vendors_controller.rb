@@ -5,7 +5,8 @@ class VendorsController < ApplicationController
 
 	#GET /vendors
 	def index
-		@vendors = Vendor.all
+		@vendors = Vendor.paginate(page: params[:page],per_page: 20).all
+
 	end
 	
 	#GET /vendors/:id
@@ -58,5 +59,5 @@ class VendorsController < ApplicationController
 		params.require(:vendor).permit(:name,:address)
 	end
 
-
+	#OrdersNotifierJob.perform_later 'Hi'
 end

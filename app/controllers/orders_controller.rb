@@ -4,7 +4,7 @@ before_action :authenticate_user!
 
   #GET /orders
 	def index
-		@orders = Order.all
+		@orders = Order.paginate(page: params[:page],per_page: 20).all.order(:created_at)
 		calculate_deliveries
 	end
 	
@@ -57,6 +57,10 @@ before_action :authenticate_user!
 		params.require(:order).permit(:name,:tracking_number,:address,:order_number,:vendor_id)
 	end
 
+
+	#HardWorker.perform_async('bob', 5)
+
+
 	def calculate_deliveries
 		@orders.each do |i|
 
@@ -67,19 +71,24 @@ before_action :authenticate_user!
          
          minutes_from_created = diff / 60
 
-         if minutes_from_created < 30
-         	i.update_attribute(:message, 'Normal')
-         	i.update_attribute(:time_min, minutes_from_created)
-         elsif minutes_from_created < 60
-         	i.update_attribute(:message, 'Not Normal')
-         	i.update_attribute(:time_min, minutes_from_created)
-         else
-         	i.update_attribute(:message, 'Very Late')
-         	i.update_attribute(:time_min, minutes_from_created)
-         end	
-         			
+         if minutes_from_created > 0 
+	         if minutes_from_created < 720 #12 hours
+	         	i.update_attribute(:message, 'Normal')
+	         	i.update_attribute(:time_min, minutes_from_created)
+	         elsif minutes_from_created < 1440 #24 hours
+	         	i.update_attribute(:message, 'Not Normal')
+	         	i.update_attribute(:time_min, minutes_from_created)
+	         else 
+	         	if minutes_from_created > 1440 
+		         	# more than 24 hrs
+		         	i.update_attribute(:message, 'Very Late')
+		         	i.update_attribute(:time_min, minutes_from_created)
+	         	end
+			end
+		else
+			i.update_attribute(:message, 'Processing')
+		    i.update_attribute(:time_min, 0)
 		end
-
 	end
-
+	end
 end
