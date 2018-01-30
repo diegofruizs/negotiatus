@@ -28,4 +28,9 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  username: <%= ENV["USERNAME_DB"]%>
+  password: qy9aam8m5qe6y7xb
+  host: <%= ENV["HOST_DB"]%>
+  port: <%= ENV["PORT_DB"]%>
+  database: <%= ENV["NAME_DB"]%>
