@@ -12,12 +12,12 @@ default: &default
 development:
   #<<: *default
   adapter: mysql2
-  username: root
-  password: root
-  host: 127.0.0.1
-  port: 3306
-  database: negotiatus_db
-  #database: db/development.sqlite3
+  username: <%= ENV["USERNAME_DB"]%>
+  password: qy9aam8m5qe6y7xb
+  host: <%= ENV["HOST_DB"]%>
+  port: <%= ENV["PORT_DB"]%>
+  database: <%= ENV["NAME_DB"]%>
+  
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
